@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { registerSchema, type RegisterDto } from "@/validations/auth.dto";
 import { registerService } from "@/services/auth.service";
+import { Spinner } from "@/components/ui/spinner";
 
 export function RegisterForm() {
   const navigate = useNavigate();
@@ -112,7 +113,10 @@ export function RegisterForm() {
             )}
           />
         </div>
-        <Button className="w-full">Register</Button>
+        <Button className="w-full">
+          {form.formState.isSubmitting && <Spinner />}
+          Register
+        </Button>
         <FieldDescription className="text-center">
           Already have an account? <Link to="/login">Sign in</Link>
         </FieldDescription>

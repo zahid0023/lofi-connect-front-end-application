@@ -12,6 +12,7 @@ import { loginSchema, type LoginDto } from "@/validations/auth.dto";
 import { loginService } from "@/services/auth.service";
 import { setAuthToken } from "@/lib/auth-token.util";
 import { useAuth } from "@/hooks/useAuth";
+import { Spinner } from "@/components/ui/spinner";
 
 export function LoginForm() {
   const navigate = useNavigate();
@@ -93,6 +94,7 @@ export function LoginForm() {
           )}
         />
         <Button type="submit" className="w-full">
+          {form.formState.isSubmitting && <Spinner />}
           Login
         </Button>
         <FieldDescription className="text-center">
