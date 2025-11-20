@@ -18,7 +18,7 @@ export function DashboardPage() {
           <p>Welcome to your dashboard!</p>
           <div className="flex items-center gap-3">
             <a
-              href="http://18.215.136.34:8080/api/v1/authorization/init"
+              href="https://18.215.136.34:8080/api/v1/authorization/init"
               className={cn(buttonVariants())}>
               Get API Token
             </a>
