@@ -18,7 +18,7 @@ export function DashboardPage() {
           <p>Welcome to your dashboard!</p>
           <div className="flex items-center gap-3">
             <a
-              href="https://18.215.136.34/api/v1/authorization/init"
+              href="https://loficonnect.lofistack.com/api/v1/authorization/init"
               className={cn(buttonVariants())}>
               Get API Token
             </a>
