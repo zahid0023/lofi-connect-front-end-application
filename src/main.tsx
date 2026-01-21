@@ -8,14 +8,17 @@ import { AuthProvider } from "@/providers/AuthProvider";
 import { router } from "@/routes/routes.tsx";
 
 import "./index.css";
+import { ThemeProvider } from "@/providers/ThemeProvider";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <TanstackQueryProvider>
-      <AuthProvider>
-        <RouterProvider router={router} />
-      </AuthProvider>
-    </TanstackQueryProvider>
-    <Toaster richColors />
+    <ThemeProvider defaultTheme="dark" storageKey="ui-theme">
+      <TanstackQueryProvider>
+        <AuthProvider>
+          <RouterProvider router={router} />
+        </AuthProvider>
+      </TanstackQueryProvider>
+      <Toaster richColors />
+    </ThemeProvider>
   </StrictMode>
 );
