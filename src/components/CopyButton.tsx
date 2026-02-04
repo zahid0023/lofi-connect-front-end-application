@@ -6,7 +6,8 @@ import { IconCheck, IconCopy } from "@tabler/icons-react";
 
 export function CopyButton({
   className,
-  variant = "default",
+  variant = "ghost",
+  size = "icon-sm",
   value,
   ...props
 }: React.ComponentProps<typeof Button> & {
@@ -19,13 +20,10 @@ export function CopyButton({
     <Tooltip>
       <TooltipTrigger asChild>
         <Button
-          className={cn(
-            "absolute top-1.5 right-1.5 z-3 opacity-70 hover:opacity-100 focus-visible:opacity-100",
-            className
-          )}
+          className={cn("opacity-70 hover:opacity-100 focus-visible:opacity-100", className)}
           data-slot="copy-button"
           onClick={() => copyToClipboard(value)}
-          size="icon-sm"
+          size={size}
           variant={variant}
           {...props}>
           <span className="sr-only">Copy</span>
